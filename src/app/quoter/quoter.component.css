@@ -1,0 +1,27 @@
+.container {
+    text-align: center;
+    display: flex;                /* Activa Flexbox */
+    justify-content: center;      /* Centra horizontalmente */
+    align-items: center;          /* Centra verticalmente */
+    height: 100vh;               /* Establece la altura del contenedor al 100% de la ventana */
+  
+  }
+  
+  /* input {
+    margin: 10px 0;
+    padding: 8px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  } */
+
+  button.blue {
+    background-color: blue;
+  }
+
+  mat-card-content {
+    padding: 16px; /* Ajusta el padding según tus necesidades */
+}
+  
+
+  

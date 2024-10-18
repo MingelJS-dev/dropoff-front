@@ -1,0 +1,61 @@
+<mat-grid-list cols="1" rowHeight="100vh" style="text-align: center;">
+    <mat-grid-tile>
+      <mat-card class="mat-elevation-z4" style="width: 400px; margin: auto;">
+        <h3>Cotizador de Paquetería</h3>
+  
+        <mat-card-content>
+          <form #_quoterForm="ngForm" appUnambiguousRole>
+            <div class="cross-validation"
+                 [class.cross-validation-error]="_quoterForm.hasError('unambiguousRole') && (_quoterForm.touched || _quoterForm.dirty)">
+              <div class="form-group">
+                <!-- Campo Largo -->
+                <mat-form-field appearance="fill">
+                  <mat-label>Largo (cm)</mat-label>
+                  <input matInput type="number" id="length" name="length" appForbiddenName="bob" required min="1"
+                         [(ngModel)]="largo" #length="ngModel">
+                  <mat-error *ngIf="length.hasError('required')">
+                    Largo es requerido.
+                  </mat-error>
+                  <mat-error *ngIf="length.hasError('min')">
+                    Debe ser mayor que 0.
+                  </mat-error>
+                </mat-form-field>
+  
+                <!-- Campo Ancho -->
+                <mat-form-field>
+                  <mat-label>Ancho (cm)</mat-label>
+                  <input matInput type="number" id="width" name="width" appForbiddenName="bob" required min="1"
+                         [(ngModel)]="ancho" #width="ngModel">
+                  <mat-error *ngIf="width.hasError('required')">
+                    Ancho es requerido.
+                  </mat-error>
+                  <mat-error *ngIf="width.hasError('min')">
+                    Debe ser mayor que 0.
+                  </mat-error>
+                </mat-form-field>
+  
+                <!-- Campo Alto -->
+                <mat-form-field appearance="fill">
+                  <mat-label>Alto (cm)</mat-label>
+                  <input matInput type="number" id="height" name="height" appForbiddenName="bob" required min="1"
+                         [(ngModel)]="alto" #height="ngModel">
+                  <mat-error *ngIf="height.hasError('required')">
+                    Alto es requerido.
+                  </mat-error>
+                  <mat-error *ngIf="height.hasError('min')">
+                    Debe ser mayor que 0.
+                  </mat-error>
+                </mat-form-field>
+  
+                <!-- Botón de calcular cotización -->
+              </div>
+              <button mat-flat-button color="primary" type="button" (click)="calcularCotizacion()"
+                      [disabled]="_quoterForm.invalid">
+                Calcular Cotización
+              </button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>  
